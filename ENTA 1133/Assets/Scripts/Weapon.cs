@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : Item
 {
-    public string Name;
     public int Attack;
    
 }

@@ -21,13 +21,48 @@ public class GameManager : MonoBehaviour
     public bool IsPlayerAlive = false;
     //public Room CurrentPlayerRoom => Map.Rooms[Player.CurrentX, Player.CurrentY];
 
-    void Start()
+    //PRESET SHIP POOLS//
+    //FIRST 3 ARE PLAYER CHOICE & THE REST ARE ENEMY NPCS//
+    public readonly string[] kVesselPresetTypes = new string[]
     {
-        
-    }
+            "BODY",
+            "MIND",
+            "HOLISTIC",
+            "THE TRU MAN",
+            "SIXTY ONE PIGS",
+            "DALLAS"
+    };
+    public readonly string[][] kVesselPresetWeaponNames = new string[][]
+    {
+            new string[] {"INVESTIGATE", "QUESTION", "PUNCH", "HANDGUN"},
+            new string[] {"INVESTIGATE", "QUESTION", "MEDITATE", "DOWSING"},
+            new string[] {"INVESTIGATE", "INVESTIGATE", "PUNCH", "DREAM"},
+            new string[] {"ENOLA", "NATO", "POINT FOUR", "BIRTH"},
+            new string[] {"DWISEN", "AIR STRIKE", "SEED", "CMC SIXTY TWO"},
+            new string[] {"JACK", "ELM", "GNOLL", "REVENGE"}
+    };
+    public readonly int[][] kVesselPresetWeaponAttacks = new int[][]
+    {
+            new int[] {5, 10, 20, 25},
+            new int[] {5, 10, 15, 35},
+            new int[] {5, 5, 20, 30},
+            new int[] {5, 10, 15, 20},
+            new int[] {10, 15, 25, 30},
+            new int[] {15, 20, 30, 35}
+    };
+    public readonly int[] kVesselPresetHP = new int[]
+    {
+            50,
+            40,
+            45,
+            20,
+            30,
+            40
+    };
+    public const int k_FirstEnemyVesselPresetIndex = 3;
 
-    void Update()
+    public void GameSetup()
     {
-        
+        Dialog.Welcome();
     }
 }
