@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
     };
     public const int k_FirstEnemyVesselPresetIndex = 3;
 
-    public void GameSetup()
+    public void Start()
     {
-       
+        Map.Setup(this, MapWidth, MapHeight, Dice, 1, 1);
     }
 }

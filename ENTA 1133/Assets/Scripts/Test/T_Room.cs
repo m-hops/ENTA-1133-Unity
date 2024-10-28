@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class T_Room : RoomBase
 {
-    public override void SetRoomLocation(Vector2 coordinates)
-    {
+    //public override void SetRoomLocation(Vector2 coordinates)
+    //{
 
-    }
+    //}
 }
