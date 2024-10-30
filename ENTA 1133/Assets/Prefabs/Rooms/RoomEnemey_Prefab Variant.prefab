@@ -58,11 +58,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3737549353831321919, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
     - target: {fileID: 5019272053833385521, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_Name
-      value: RoomDefault_Prefab
+      value: RoomEnemey_Prefab Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5834979376804538574, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 7610236911991717246, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 8020856140988031461, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

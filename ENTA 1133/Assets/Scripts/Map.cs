@@ -8,7 +8,9 @@ public class Map : MonoBehaviour
     public int RoomOffset = 10;
     public Room[,] Rooms;
     public Room StartRoom;
+    public Room EnemyRoom;
     public List<Room> AvailableRooms = new List<Room>();
+    private int EnemyCount = 3;
 
     public void Setup(GameManager gm, int width, int height, DieRoller dice, int startX, int startY)
     {
@@ -16,6 +18,13 @@ public class Map : MonoBehaviour
         Rooms = new Room[width, height];
 
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
+
+        AvailableRooms.RemoveRange(0, EnemyCount);
+
+        for (int x = 0; x < EnemyCount; x++)
+        {
+            AvailableRooms.Add(EnemyRoom);
+        } 
 
         for (int x = 0; x < width; x++)
         {
@@ -33,21 +42,19 @@ public class Map : MonoBehaviour
                 r.PosX = x;
                 r.PosY = y;
 
+                //CHECKS IF WALL NEEDS TO BE REMOVED TO CONNECTING ROOMS//
                 if (r.PosX > 0)
                 {
                     r.WestDoor.SetActive(false);
                 }
-
                 if (r.PosX < gm.MapWidth-1)
                 {
                     r.EastDoor.SetActive(false);
                 }
-
                 if (r.PosY > 0)
                 {
                     r.SouthDoor.SetActive(false);
                 }
-
                 if (r.PosY < gm.MapHeight - 1)
                 {
                     r.NorthDoor.SetActive(false);

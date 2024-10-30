@@ -69,7 +69,7 @@ PrefabInstance:
     - target: {fileID: 4802185273285002889, guid: b59ad0bc75199934fa6197ac490675be,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4802185273285002889, guid: b59ad0bc75199934fa6197ac490675be,
         type: 3}
@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 4802185273285002889, guid: b59ad0bc75199934fa6197ac490675be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4802185273285002889, guid: b59ad0bc75199934fa6197ac490675be,
         type: 3}
@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 7826292159376487129, guid: b59ad0bc75199934fa6197ac490675be,
         type: 3}
       propertyPath: m_Name
-      value: PlayerPrefab
+      value: Player_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -190,6 +190,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: EnemyRoom
+      value: 
+      objectReference: {fileID: 5688860776329737439, guid: 53ad9ad296c09204f96a499743f9bdc1,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: StartRoom
+      value: 
+      objectReference: {fileID: 8176632719604615097, guid: fdedb78fd2938eb45af46d94c118acb3,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[3]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[4]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[5]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[6]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
+    - target: {fileID: 7662746777869727923, guid: d34d4c47f30f3844198b65b2053b3475,
+        type: 3}
+      propertyPath: AvailableRooms.Array.data[7]
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
     - target: {fileID: 8096238249231823723, guid: d34d4c47f30f3844198b65b2053b3475,
         type: 3}
       propertyPath: m_Name
