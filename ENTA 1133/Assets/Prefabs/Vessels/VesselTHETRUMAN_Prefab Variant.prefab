@@ -8,10 +8,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: Name
+      value: THE TRU MAN
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[0]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: c86c73c41b9e36641a56cc5676a94203,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[1]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: 1c7d9e5570811204798b50e9668fb8c7,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[2]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: cae4f9d16059cbd4f88a648542da5939,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[3]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: 7306a10d70e9dae46b7f3c516e19e036,
+        type: 3}
     - target: {fileID: 2042049496459843447, guid: b0287cc870d18734ab9d5a4cc2656b6b,
         type: 3}
       propertyPath: m_Name
-      value: VesselDefault_Prefab
+      value: VesselTHETRUMAN_Prefab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6910720277406073209, guid: b0287cc870d18734ab9d5a4cc2656b6b,
         type: 3}

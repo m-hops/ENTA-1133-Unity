@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1296830112045160120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3357239598185550109, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponXENOGLOSSY_Prefab Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284113446140573819, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: Name
+      value: XENOGLOSSY
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: Attack
+      value: 40
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46b0337b38198184fa1abdd06bd94518, type: 3}

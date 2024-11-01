@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5191490729137047872, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: Name
+      value: Treasure Room A
+      objectReference: {fileID: 0}
     - target: {fileID: 2834421012381946988, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_LocalPosition.x

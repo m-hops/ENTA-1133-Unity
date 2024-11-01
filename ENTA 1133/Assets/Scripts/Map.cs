@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public int RoomName = 0;
     public int RoomOffset = 10;
     public Room[,] Rooms;
     public Room StartRoom;
@@ -18,8 +17,6 @@ public class Map : MonoBehaviour
         Rooms = new Room[width, height];
 
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
-
-        AvailableRooms.RemoveRange(0, EnemyCount);
 
         for (int x = 0; x < EnemyCount; x++)
         {
@@ -38,6 +35,7 @@ public class Map : MonoBehaviour
                     Rooms[x, y] = r;
                     AvailableRooms.RemoveAt(roomIndex);
                 }
+
                 r.transform.position = new Vector3(x * RoomOffset, 0, y * RoomOffset);
                 r.PosX = x;
                 r.PosY = y;

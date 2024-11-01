@@ -8,10 +8,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 3719619d826b3b24bb94ee8ac6a95cd7,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: Name
+      value: HOLISTIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: Health
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: ShipIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 3719619d826b3b24bb94ee8ac6a95cd7,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[0]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: 4b27d7722c4af0a41a0d07cf69e7f298,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[1]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: 4b27d7722c4af0a41a0d07cf69e7f298,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[2]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: 07269ef967f62b5409db29b38b07b613,
+        type: 3}
+    - target: {fileID: 111965994784958016, guid: b0287cc870d18734ab9d5a4cc2656b6b,
+        type: 3}
+      propertyPath: DefaultWeaponLoadout.Array.data[3]
+      value: 
+      objectReference: {fileID: 8961414357536772596, guid: fd00c78d1b0967c4e8062550d305f2dc,
+        type: 3}
     - target: {fileID: 2042049496459843447, guid: b0287cc870d18734ab9d5a4cc2656b6b,
         type: 3}
       propertyPath: m_Name
-      value: VesselDefault_Prefab
+      value: VesselHOLISTIC_Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6910720277406073209, guid: b0287cc870d18734ab9d5a4cc2656b6b,
         type: 3}

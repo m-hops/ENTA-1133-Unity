@@ -16,9 +16,28 @@ public class Player : MonoBehaviour
     public float CurretAngle;
     public int CurrentX;
     public int CurrentY;
-    public Direction CurrentDirection;
+    public int AttackBonus;
+    public int DefenseBonus;
+    public Vessel Vessel;
+    private Direction CurrentDirection;
+    public Map Map;
+    public GameManager GM;
 
-    public void TurnLeft(Map map)
+    public void Start()
+    {
+        AttackBonus = 0;
+        DefenseBonus = 0;
+
+        CurrentDirection = Direction.North;
+
+        CurrentX = GM.MapWidth / 2;
+        CurrentY = GM.MapHeight / 2;
+
+        UpdatePlayerTransform();
+    }
+
+    //PLAYER MOVEMENT CONTROLS
+    public void TurnLeft()
     {
         switch (CurrentDirection)
         {
@@ -35,19 +54,9 @@ public class Player : MonoBehaviour
                 CurrentDirection = Direction.South;
                 break;
         }
-        CurretAngle -= 90;
-
-        if (CurretAngle < -1)
-        {
-            CurretAngle = 270;
-        }
-        gameObject.transform.rotation = Quaternion.Euler(0, CurretAngle, 0);
-        //gameObject.transform.rotation = Quaternion.Euler(0, CurretAngle, 0);
-
-        Debug.Log("Turns Left");
+        UpdatePlayerTransform();
     }
-
-    public void TurnRight(Map map)
+    public void TurnRight()
     {
         switch (CurrentDirection)
         {
@@ -64,28 +73,46 @@ public class Player : MonoBehaviour
                 CurrentDirection = Direction.North;
                 break;
         }
-        CurretAngle += 90;
-        gameObject.transform.rotation = Quaternion.Euler(0, CurretAngle, 0);
-
-        Debug.Log("Turns Right");
+        UpdatePlayerTransform();
     }
-
     public void MoveForward()
     {
-        float currentX = gameObject.transform.position.x;
-        float currentY = gameObject.transform.position.y;
-        float currentZ = gameObject.transform.position.z;
-        int moveAmount = 10;
+        float y = gameObject.transform.position.y;
 
-        if (CurretAngle == 0)
+        switch (CurrentDirection)
         {
-            gameObject.transform.position = new Vector3(currentX, currentY, currentZ + moveAmount);
-        } 
-        
+            case Direction.North:
+                if (CurrentY < (GM.MapHeight-1))
+                {
+                    CurrentY++;
+                    UpdatePlayerTransform();
+                }
+                break;
+            case Direction.East:
+                if (CurrentX < (GM.MapWidth - 1))
+                {
+                    CurrentX++;
+                    UpdatePlayerTransform();
+                }
+                break;
+            case Direction.South:
+                if (CurrentY > 0)
+                {
+                    CurrentY--;
+                    UpdatePlayerTransform();
+                }
+                break;
+            case Direction.West:
+                if (CurrentX > 0)
+                {
+                    CurrentX--;
+                    UpdatePlayerTransform();
+                }
+                break;
+        }
 
     }
-
-    private void UpdatePlayerObjectPosition(Map map)
+    private void UpdatePlayerTransform()
     {
         switch (CurrentDirection)
         {
@@ -93,16 +120,16 @@ public class Player : MonoBehaviour
                 gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 break;
             case Direction.East:
-                gameObject.transform.rotation = Quaternion.Euler(0, 270, 0);
+                gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
                 break;
             case Direction.South:
                 gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
                 break;
             case Direction.West:
-                gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                gameObject.transform.rotation = Quaternion.Euler(0, 270, 0);
                 break;
         }
-
-        gameObject.transform.position = new Vector3(currentX, currentY, currentZ + moveAmount);
+        float y = gameObject.transform.position.y;
+        gameObject.transform.position = new Vector3(CurrentX * Map.RoomOffset, y, CurrentY * Map.RoomOffset);
     }
 }

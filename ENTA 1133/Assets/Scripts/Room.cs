@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    [SerializeField] public int Name;
-    [SerializeField] public int PosX;
-    [SerializeField] public int PosY;
-    [SerializeField] public string Description;
-    [SerializeField] public Event Event;
-    [SerializeField] public GameObject NorthDoor;
-    [SerializeField] public GameObject SouthDoor;
-    [SerializeField] public GameObject EastDoor;
-    [SerializeField] public GameObject WestDoor;
+    public string Name;
+    public int PosX;
+    public int PosY;
+    public Event Event;
+    public GameObject NorthDoor;
+    public GameObject SouthDoor;
+    public GameObject EastDoor;
+    public GameObject WestDoor;
+
+    public void OnDecript(GameManager gm)
+    {
+        if (Event == null || Event.IsDecrypted)
+        {
+            Debug.Log("Room is already decrypted");
+        }
+        else
+        {
+            Debug.Log("Room is now decrypted");
+            Event.Execute(gm);
+        }
+    }
 }
