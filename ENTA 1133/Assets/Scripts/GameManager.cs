@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public DieRoller Dice = new DieRoller();
     public Player Player;
     public Map Map;
+    public CombatUIHUD CombatUIHUD;
     [Range (1,3)]
     public int MapWidth = 3;
     [Range(1, 3)]
@@ -26,7 +27,10 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        Player.Vessel = PlayerVesselPool[0];
         Map.Setup(this, MapWidth, MapHeight, Dice, 1, 1);
+        CombatEvent ce = new CombatEvent();
+        ce.Execute(this);
     }
 
     public void Update()

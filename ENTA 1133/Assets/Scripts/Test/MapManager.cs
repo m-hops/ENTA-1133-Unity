@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    [SerializeField] private RoomBase[] RoomPrefabs;
-    [SerializeField] private float RoomSize = 1;
+    //[SerializeField] private RoomBase[] RoomPrefabs;
+    //[SerializeField] private float RoomSize = 1;
 
-    public void CreateMap()
-    {
-       
-    }
+
 }
