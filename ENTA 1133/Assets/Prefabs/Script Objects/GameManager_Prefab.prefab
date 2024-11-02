@@ -46,12 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1dec6f3c21edd439beedf463d456f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 7485439425304779853, guid: eebd641c8ef86f445a2959d63656d4b2, type: 3}
+  Player: {fileID: 7745103406991267127}
   Map: {fileID: 4507851332039671836}
+  CombatUIHUD: {fileID: 0}
   MapWidth: 3
   MapHeight: 3
-  EnemyVesselsPool: []
-  PlayerVesselPool: []
+  EnemyVesselsPool:
+  - {fileID: 8210707235879136810, guid: d8babc31b23cfee44b1630d17ded2d58, type: 3}
+  - {fileID: 8210707235879136810, guid: fb46c38bd2cb0774a87ea1f0c9c5bc29, type: 3}
+  - {fileID: 8210707235879136810, guid: 96bf2d9b2882d0f4faf4fa696febbc96, type: 3}
+  PlayerVesselPool:
+  - {fileID: 6003783011812243085, guid: 01f374eedf9ed0140a1ace05655c3dd4, type: 3}
+  - {fileID: 3698119691245604489, guid: e0c2964c4d0d058409b8adbdaffee02c, type: 3}
+  - {fileID: 6248715740686557710, guid: c4993555c9811524194eb118d135d1b0, type: 3}
   TreasurePoolWeapons:
   - {fileID: 8961414357536772596, guid: 2c1347c156e3f5541b832c3fcd82cd97, type: 3}
   - {fileID: 8961414357536772596, guid: 716cdcb215d65854cb10dc46934faad2, type: 3}
@@ -170,6 +177,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4725662776869822660}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7745103406991267127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091949573870810611, guid: b59ad0bc75199934fa6197ac490675be,
+    type: 3}
+  m_PrefabInstance: {fileID: 4725662776869822660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a292f2f87e3865040ba59b42b6065ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6113796470158047407
 PrefabInstance:
   m_ObjectHideFlags: 0

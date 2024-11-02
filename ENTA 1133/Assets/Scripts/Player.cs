@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private Direction CurrentDirection;
     public Map Map;
     public GameManager GM;
+    public GameObject ObjectSpawnArea;
 
     public void Start()
     {
