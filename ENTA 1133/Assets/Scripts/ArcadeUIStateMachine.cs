@@ -45,4 +45,12 @@ public class ArcadeUIStateMachine : MonoBehaviour
 
 
     }
+    public void DownButtonColorChange(Image image)
+    {
+        image.GetComponent<Image>().color = new Color(255, 0, 0);
+    }
+    public void UpButtonColorChange(Image image)
+    {
+        image.GetComponent<Image>().color = new Color(255, 255, 255);
+    }
 }

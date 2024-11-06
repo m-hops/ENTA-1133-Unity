@@ -13,6 +13,16 @@ PrefabInstance:
       propertyPath: Name
       value: Enemy Room
       objectReference: {fileID: 0}
+    - target: {fileID: 1130472361663857013, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 1270381532068932684, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2834421012381946988, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,11 +78,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 4185078870238928177, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 605bd15f4e8e14f4586d99823ec55549, type: 2}
     - target: {fileID: 5019272053833385521, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_Name
       value: RoomEnemey_Prefab Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5323437180094337913, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536743035154887967, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 605bd15f4e8e14f4586d99823ec55549, type: 2}
+    - target: {fileID: 5657642241921635169, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 605bd15f4e8e14f4586d99823ec55549, type: 2}
     - target: {fileID: 5834979376804538574, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -83,11 +113,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 7744509394031010222, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f043f38a75a1b8c41b3f5a8fc933a5b6, type: 2}
     - target: {fileID: 8020856140988031461, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8a9af554147545f42ab3c2f3055a2e49, type: 2}
+    - target: {fileID: 8072139609543366277, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 605bd15f4e8e14f4586d99823ec55549, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
