@@ -8,7 +8,7 @@ public class Map : MonoBehaviour
     public Room[,] Rooms;
     public Room StartRoom;
     public Room EnemyRoom;
-    public List<Room> AvailableRooms = new List<Room>();
+    public Room TreasureRoom;
     private int EnemyCount = 3;
 
     public void Setup(GameManager gm, int width, int height, DieRoller dice, int startX, int startY)
@@ -16,19 +16,21 @@ public class Map : MonoBehaviour
         Rooms = new Room[width, height];
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
         List<Room> roomInstances = new List<Room>();
-
-        for (int i = 0; i < AvailableRooms.Count; i++)
-        {
-            roomInstances.Add(GameObject.Instantiate(AvailableRooms[i]));
-        }
-
+        
         for (int x = 0; x < EnemyCount; x++)
         {
             Room r = GameObject.Instantiate(EnemyRoom);
             r.Event = new CombatEvent();
             roomInstances.Add(r);
-        } 
+        }
+        int treasureRoomCount = width * height - 1 -EnemyCount;
 
+        for (int i = 0; i < treasureRoomCount; i++)
+        {
+            Room r = GameObject.Instantiate(TreasureRoom);
+            r.Event = new TreasureEvent();
+            roomInstances.Add(r);
+        }
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)

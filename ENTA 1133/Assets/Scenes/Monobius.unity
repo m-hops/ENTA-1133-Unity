@@ -308,6 +308,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 612461817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &712745240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712745241}
+  - component: {fileID: 712745243}
+  - component: {fileID: 712745242}
+  m_Layer: 0
+  m_Name: UI_PP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &712745241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712745240}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.47, y: 0, z: -21.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1894120634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712745242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712745240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 733660c2e8c52ab41bbbb07ee7f5926f, type: 2}
+--- !u!65 &712745243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712745240}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.871338, y: 3.0562234, z: 2.8817596}
+  m_Center: {x: -0.079610825, y: -0.09221411, z: 0.9408798}
 --- !u!1 &999759541
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +918,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1659394085}
+  - {fileID: 712745241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1966866570
@@ -862,6 +934,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4507851332039671836, guid: a8bf706fa175e564db765194718a7a11,
+        type: 3}
+      propertyPath: TreasureRoom
+      value: 
+      objectReference: {fileID: 2240521978382710385, guid: 1298ac9039a39764c82b9535b9969f4a,
+        type: 3}
     - target: {fileID: 6247569359426590794, guid: a8bf706fa175e564db765194718a7a11,
         type: 3}
       propertyPath: CombatUIHUD
@@ -1239,6 +1317,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575670711258135235, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723432307170972762, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
