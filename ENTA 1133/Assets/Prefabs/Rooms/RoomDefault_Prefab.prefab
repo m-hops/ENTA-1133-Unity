@@ -299,6 +299,8 @@ MonoBehaviour:
   Name: 0
   PosX: 0
   PosY: 0
+  Encrypted: {fileID: 5323437180094337913}
+  Decrypted: {fileID: 1270381532068932684}
   NorthDoor: {fileID: 8050708587685486571}
   SouthDoor: {fileID: 4983920919504230230}
   EastDoor: {fileID: 3030588345981123410}

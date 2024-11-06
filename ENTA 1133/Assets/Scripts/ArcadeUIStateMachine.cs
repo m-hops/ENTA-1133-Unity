@@ -11,13 +11,6 @@ public class ArcadeUIStateMachine : MonoBehaviour
     public GameObject Combat;
     public GameObject Inventory;
     public GameObject ShipSelect;
-    
-    private GameObject ShipSelectSlot0;
-
-    public void Start()
-    {
-        ShipSelectSlot0 = ShipSelect.transform.Find("ShipSlot0").gameObject;
-    }
 
     public void LoadingScreen()
     {
@@ -51,9 +44,5 @@ public class ArcadeUIStateMachine : MonoBehaviour
     {
 
 
-    }
-    public void DisplayShipInfoSlot(VesselSelectCard vsc, GameObject vessel)
-    {
-        //vsc.Name = ShipSelectSlot0.GetComponent<TextMeshProUGUI>.
     }
 }

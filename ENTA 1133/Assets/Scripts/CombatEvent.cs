@@ -10,8 +10,8 @@ public class CombatEvent : Event
     //RUNS MULTIPLE COMBAT ROUNDS UNTIL PLAYER OR ENEMY IS DEAD//
     public override void Execute(GameManager gm)
     {
-        EnemyVessel = GameObject.Instantiate(gm.EnemyVesselsPool[1], gm.Player.ObjectSpawnArea.transform);
-        gm.EnemyVesselsPool.RemoveAt(1);
+        EnemyVessel = GameObject.Instantiate(gm.EnemyVesselsPool[0], gm.Player.ObjectSpawnArea.transform);
+        gm.EnemyVesselsPool.RemoveAt(0);
         EnemyVessel.ResetWeapons();
         gm.Player.Vessel.ResetWeapons();
 
@@ -53,6 +53,8 @@ public class CombatEvent : Event
                 playerVesselWeaponIndex = i;
             }
         }
+        //INSERT UI COMMAND HERE//
+        gm.CombatUIHUD.ClearCombatText();
 
         //SETUP FOR COMBAT CALCULATIONS//
         int enemyVesselWeaponIndex = enemyVessel.GetRandomAvailableWeaponIndex(gm.Dice);
@@ -104,7 +106,6 @@ public class CombatEvent : Event
             {
                 gm.CombatUIHUD.UpdateCombatText("Player negates all damage due to defense bonus.");
             }
-            
         }
         //IF PLAYER AND ENEMY ROLL THE SAME//
         else

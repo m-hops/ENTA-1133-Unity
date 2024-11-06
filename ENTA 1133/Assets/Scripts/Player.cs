@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public Map Map;
     public GameManager GM;
     public GameObject ObjectSpawnArea;
+    public Inventory Inventory = new Inventory();
 
     public void Start()
     {
