@@ -15,53 +15,25 @@ public class CombatEvent : Event
         EnemyVessel.ResetWeapons();
         gm.Player.Vessel.ResetWeapons();
 
-        gm.CombatUIHUD.SetupCombatEventUI(gm.Player.Vessel, EnemyVessel);
+        gm.CombatUIHUD.SetupCombatEventUI(this);
 
-        //RESETS WEAPON POOL EVERY 4 ROUNDS//
-        while (!IsEventConcluded)
-        {
-            CombatRound(gm, EnemyVessel);
-
-            RoundCounter++;
-            if (RoundCounter % Vessel.kWeaponCount == 0)
-            {
-                gm.Player.Vessel.ResetWeapons();
-                EnemyVessel.ResetWeapons();
-            }
-        }
-
-        //SETS ROOM TO TO DECRYPTED AFTER COMBAT;
-        IsDecrypted = true;
-        if (gm.EnemyVesselsPool.Count == 0)
-        {
-            Win(gm);
-        }
+        CombatRoundStage1(gm);
     }
     //BEHAVIOUR FOR A SINGLE ROUND OF COMBAT//
-    public void CombatRound(GameManager gm, Vessel enemyVessel)
+    public void CombatRoundStage1(GameManager gm)
     {
-        int playerVesselWeaponIndex = -1;
-
-        while (playerVesselWeaponIndex < 0)
-        {
-            //RUNS THROUGH ARRAY AND LIST TO RETURN STILL VALID WEAPONS OR QUEUE WEAPON RESET//
-            for (int i = 0; i < gm.Player.Vessel.WeaponsReady.Count; i++)
-            {
-                int weaponIndex = gm.Player.Vessel.WeaponsReady[i];
-                Debug.Log(gm.Player.Vessel.Weapons[weaponIndex].Name);
-                //TEMPORARY; SIMULATE PLAYER SELECTING THE LAST AVAILABLE WEAPON INDEX//
-                playerVesselWeaponIndex = i;
-            }
-        }
-        //INSERT UI COMMAND HERE//
-        gm.CombatUIHUD.ClearCombatText();
-
+        gm.CombatUIHUD.ShowCombatRound(gm.Player.Vessel, EnemyVessel);
+    }
+    //BEHAVIOUR FOR A SINGLE ROUND OF COMBAT//
+    public void CombatRoundStage2(GameManager gm, int playerVesselWeaponIndex)
+    {
+       
         //SETUP FOR COMBAT CALCULATIONS//
-        int enemyVesselWeaponIndex = enemyVessel.GetRandomAvailableWeaponIndex(gm.Dice);
-        string enemyVesselCurrentWeapon = enemyVessel.Weapons[enemyVesselWeaponIndex].Name;
+        int enemyVesselWeaponIndex = EnemyVessel.GetRandomAvailableWeaponIndex(gm.Dice);
+        string enemyVesselCurrentWeapon = EnemyVessel.Weapons[enemyVesselWeaponIndex].Name;
         string playerVesselCurrentWeapon = gm.Player.Vessel.Weapons[playerVesselWeaponIndex].Name;
         int playerVesselDice = gm.Player.Vessel.Weapons[playerVesselWeaponIndex].PowerLevel;
-        int enemyVesselDice = enemyVessel.Weapons[playerVesselWeaponIndex].PowerLevel;
+        int enemyVesselDice = EnemyVessel.Weapons[playerVesselWeaponIndex].PowerLevel;
         int playerVesselRollResult = gm.Dice.Roll(playerVesselDice);
         int enemyVesselRollResult = gm.Dice.Roll(enemyVesselDice);
         int playerVesselAttackBonus = gm.Player.AttackBonus;
@@ -72,16 +44,16 @@ public class CombatEvent : Event
         if (playerVesselRollResult > enemyVesselRollResult)
         {
             int dmg = playerVesselRollResult - enemyVesselRollResult;
-            enemyVessel.Health -= dmg;
+            EnemyVessel.Health -= dmg;
             gm.CombatUIHUD.UpdateCombatText("Enemy takes " + dmg + ".");
 
-            if (enemyVessel.Health < 0)
+            if (EnemyVessel.Health < 0)
             {
-                enemyVessel.Health = 0;
+                EnemyVessel.Health = 0;
             }
 
-            gm.CombatUIHUD.UpdateEnemyHealth(enemyVessel.Health);
-            
+            gm.CombatUIHUD.UpdateEnemyHealth(EnemyVessel.Health);
+
 
         }
         //IF ENEMY ROLLS HIGHER THAN PLAYER//
@@ -102,7 +74,8 @@ public class CombatEvent : Event
                 }
 
                 gm.CombatUIHUD.UpdatePlayerHealth(gm.Player.Vessel.Health);
-            } else
+            }
+            else
             {
                 gm.CombatUIHUD.UpdateCombatText("Player negates all damage due to defense bonus.");
             }
@@ -121,11 +94,35 @@ public class CombatEvent : Event
             gm.CombatUIHUD.UpdateCombatText("Trigger LOSE condition");
         }
         //ACTIVATE WIN CONDITION//
-        if (enemyVessel.Health <= 0)
+        else if (EnemyVessel.Health <= 0)
         {
             gm.CombatUIHUD.UpdateCombatText("Enemy was killed by the player.");
             IsEventConcluded = true;
             gm.CombatUIHUD.UpdateCombatText("Trigger WIN condition");
+            GameObject.Destroy(EnemyVessel.gameObject);
+        }
+        else
+        {
+            RoundCounter++;
+            if (RoundCounter % Vessel.kWeaponCount == 0)
+            {
+                gm.Player.Vessel.ResetWeapons();
+                EnemyVessel.ResetWeapons();
+            }
+        }
+        
+        if (!IsEventConcluded)
+        {
+            CombatRoundStage1(gm);
+        } else
+        {
+            //SETS ROOM TO TO DECRYPTED AFTER COMBAT;
+            IsDecrypted = true;
+            if (gm.EnemyVesselsPool.Count == 0)
+            {
+                Win(gm);
+            }
+            gm.CombatUIHUD.ArcadeUIStateMachine.NavigationScreen();
         }
     }
 

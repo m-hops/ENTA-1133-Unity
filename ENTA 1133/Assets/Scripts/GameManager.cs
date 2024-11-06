@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public Player Player;
     public Map Map;
     public CombatUIHUD CombatUIHUD;
-    public CombatEvent CombatEvent;
 
     [Range (1,3)]
     public int MapWidth = 3;

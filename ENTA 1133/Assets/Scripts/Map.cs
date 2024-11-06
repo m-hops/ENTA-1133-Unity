@@ -18,9 +18,18 @@ public class Map : MonoBehaviour
 
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
 
+        List<Room> roomInstances = new List<Room>();
+
+        for (int i = 0; i < AvailableRooms.Count; i++)
+        {
+            roomInstances.Add(GameObject.Instantiate(AvailableRooms[i]));
+        }
+
         for (int x = 0; x < EnemyCount; x++)
         {
-            AvailableRooms.Add(EnemyRoom);
+            Room r = GameObject.Instantiate(EnemyRoom);
+            r.Event = new CombatEvent();
+            roomInstances.Add(r);
         } 
 
         for (int x = 0; x < width; x++)
@@ -30,10 +39,10 @@ public class Map : MonoBehaviour
                 Room r = Rooms[x, y];
                 if (r == null)
                 {
-                    int roomIndex = gm.Dice.Roll(AvailableRooms.Count)-1;
-                    r = GameObject.Instantiate(AvailableRooms[roomIndex]);
+                    int roomIndex = gm.Dice.Roll(roomInstances.Count)-1;
+                    r = roomInstances[roomIndex];
                     Rooms[x, y] = r;
-                    AvailableRooms.RemoveAt(roomIndex);
+                    roomInstances.RemoveAt(roomIndex);
                 }
 
                 r.transform.position = new Vector3(x * RoomOffset, 0, y * RoomOffset);
