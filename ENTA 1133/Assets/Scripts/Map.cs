@@ -13,11 +13,8 @@ public class Map : MonoBehaviour
 
     public void Setup(GameManager gm, int width, int height, DieRoller dice, int startX, int startY)
     {
-
         Rooms = new Room[width, height];
-
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
-
         List<Room> roomInstances = new List<Room>();
 
         for (int i = 0; i < AvailableRooms.Count; i++)
@@ -44,7 +41,6 @@ public class Map : MonoBehaviour
                     Rooms[x, y] = r;
                     roomInstances.RemoveAt(roomIndex);
                 }
-
                 r.transform.position = new Vector3(x * RoomOffset, 0, y * RoomOffset);
                 r.PosX = x;
                 r.PosY = y;

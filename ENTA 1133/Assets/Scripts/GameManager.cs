@@ -31,10 +31,9 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        Player.Vessel = GameObject.Instantiate(PlayerVesselPool[0]);
+
         Map.Setup(this, MapWidth, MapHeight, Dice, 1, 1);
-        //CombatEvent ce = new CombatEvent();
-        //ce.Execute(this);
+
     }
 
     public void Update()
@@ -43,14 +42,6 @@ public class GameManager : MonoBehaviour
         {
 
         }
-    }
-
-    public void SelectPlayerVessel(string shipName)
-    {
-        Vessel response = PlayerVesselPool.Find(x => x.Name == shipName);
-        Player.Vessel = GameObject.Instantiate(response);
-
-        Debug.Log(Player.Vessel.Name);
     }
 
 }

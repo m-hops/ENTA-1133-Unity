@@ -18,6 +18,7 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Navigation.SetActive(false);
         Combat.SetActive(false);
         Inventory.SetActive(false);
+        ShipSelect.SetActive(false);
     }
     public void NavigationScreen()
     {
@@ -25,6 +26,7 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Navigation.SetActive(true);
         Combat.SetActive(false);
         Inventory.SetActive(false);
+        ShipSelect.SetActive(false);
     }
     public void CombatScreen()
     {
@@ -32,6 +34,7 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Navigation.SetActive(false);
         Combat.SetActive(true);
         Inventory.SetActive(false);
+        ShipSelect.SetActive(false);
     }
     public void InventoryScreen()
     {
@@ -39,11 +42,15 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Navigation.SetActive(false);
         Combat.SetActive(false);
         Inventory.SetActive(true);
+        ShipSelect.SetActive(false);
     }
     public void VesselSelectScreen()
     {
-
-
+        Loading.SetActive(false);
+        Navigation.SetActive(false);
+        Combat.SetActive(false);
+        Inventory.SetActive(false);
+        ShipSelect.SetActive(true);
     }
     public void DownButtonColorChange(Image image)
     {

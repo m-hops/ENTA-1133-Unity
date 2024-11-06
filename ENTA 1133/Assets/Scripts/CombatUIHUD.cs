@@ -57,14 +57,11 @@ public class CombatUIHUD : MonoBehaviour
     {
         CombatTextOutput.text = null;
     }
-
     public void SelectWeapon(int weaponIndex)
     {
         Debug.Log("SelectWeapon " + weaponIndex);
         CurrentCombatEvent.CombatRoundStage2(GM, weaponIndex);
     }
-
-
     public void ShowCombatRound(Vessel player, Vessel enemy)
     {
         CombatTextOutput.text = "[BEGIN COMBAT]";

@@ -49,11 +49,12 @@ public class TreasureEvent : Event
 
     public void TreasureWeapon(GameManager gm, Weapon weapon)
     {
-        
+        Debug.Log("Player Gains a weapon");
     }
 
     public void TreasureItem(GameManager gm, Item item)
     {
         gm.Player.Inventory.AddItem(item);
+        Debug.Log("Player Gains an item");
     }
 }
