@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &712745241
 Transform:
   m_ObjectHideFlags: 0
@@ -782,6 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RenderTextureCamera: {fileID: 1074828561}
+  CurrentHoverEventTrigger: {fileID: 0}
 --- !u!1 &1646769219
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +946,12 @@ PrefabInstance:
       propertyPath: CombatUIHUD
       value: 
       objectReference: {fileID: 175287289}
+    - target: {fileID: 6247569359426590794, guid: a8bf706fa175e564db765194718a7a11,
+        type: 3}
+      propertyPath: EnemyVesselsPool.Array.data[0]
+      value: 
+      objectReference: {fileID: 8210707235879136810, guid: d8babc31b23cfee44b1630d17ded2d58,
+        type: 3}
     - target: {fileID: 6963069790566046391, guid: a8bf706fa175e564db765194718a7a11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1253,6 +1260,16 @@ PrefabInstance:
       propertyPath: GM
       value: 
       objectReference: {fileID: 2008329714}
+    - target: {fileID: 1756886140829649920, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2025735604}
+    - target: {fileID: 1781432208409858729, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2025735604}
     - target: {fileID: 3806452906508685047, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
       propertyPath: GM
@@ -1263,11 +1280,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICamera_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4528193081738562435, guid: 992089bce2fa4ef47a82ab5e456e3452,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2025735604}
     - target: {fileID: 4624790075344532045, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1318,24 +1330,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5575670711258135235, guid: 992089bce2fa4ef47a82ab5e456e3452,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5723432307170972762, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
       propertyPath: GM
       value: 
       objectReference: {fileID: 2008329714}
-    - target: {fileID: 6085899326748067023, guid: 992089bce2fa4ef47a82ab5e456e3452,
-        type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2025735604}
     - target: {fileID: 6913822895687402708, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2025735604}
     m_RemovedComponents: []
