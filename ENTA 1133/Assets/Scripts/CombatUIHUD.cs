@@ -35,8 +35,23 @@ public class CombatUIHUD : MonoBehaviour
 
         switch (currentSoundtrack)
         {
+            //ENEMY 1 SOUNDTRACK//
             case 0:
                 GM.AudioStateMachine.SoundtrackStateMachine(1);
+                currentSoundtrack++;
+                break;
+            //ENEMY 2 SOUNDTRACK//
+            case 1:
+                GM.AudioStateMachine.SoundtrackStateMachine(1);
+                currentSoundtrack++;
+                break;
+            //ENEMY 3 SOUNDTRACK//
+            case 2:
+                GM.AudioStateMachine.SoundtrackStateMachine(1);
+                currentSoundtrack++;
+                break;
+            default:
+                currentSoundtrack = 0;
                 break;
         }
     }

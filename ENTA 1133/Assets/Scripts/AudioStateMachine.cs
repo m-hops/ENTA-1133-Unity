@@ -20,7 +20,7 @@ public class AudioStateMachine : MonoBehaviour
         SFXOutput.GetComponent<AudioSource>().PlayOneShot(UIButton_SFX, 1F);
     }
 
-    public void SoundtrackStateMachine(int track)
+    public void SoundtrackStateMachine(int track, float pitchAdjust = 1)
     {
         AudioSource currentTrack = SoundtrackOutput.GetComponent<AudioSource>();
         currentTrack.Stop();
@@ -29,17 +29,20 @@ public class AudioStateMachine : MonoBehaviour
         {
             //MAIN THEME//
             case 0:
+                currentTrack.pitch = pitchAdjust;
                 currentTrack.clip = MainTheme_Loop;
                 currentTrack.Play();
                 break;
             //THE TRUMAN THEME//
             case 1:
+                currentTrack.pitch = pitchAdjust;
                 currentTrack.clip = TRUMAN_Loop;
                 currentTrack.Play();
                 break;
             default:
                 break;
         }
+
     }
 
 }
