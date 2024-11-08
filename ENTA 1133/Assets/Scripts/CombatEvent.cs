@@ -6,13 +6,12 @@ public class CombatEvent : Event
 {
     public int RoundCounter = 0;
     public Vessel EnemyVessel;
-    private float currentPitchAdjustment = 1f;
-    private float pitchOffset = 0.20f;
+   
 
     //RUNS MULTIPLE COMBAT ROUNDS UNTIL PLAYER OR ENEMY IS DEAD//
     public override void Execute(GameManager gm)
     {
-        currentPitchAdjustment -= pitchOffset;
+        gm.AudioStateMachine.currentPitchAdjustment -= gm.AudioStateMachine.pitchOffset;
         EnemyVessel = GameObject.Instantiate(gm.EnemyVesselsPool[0], gm.Player.ObjectSpawnArea.transform);
         gm.EnemyVesselsPool.RemoveAt(0);
         EnemyVessel.ResetWeapons();
@@ -95,7 +94,7 @@ public class CombatEvent : Event
             gm.IsPlayerAlive = false;
             IsEventConcluded = true;
             Debug.Log("Trigger LOSE condition");
-            gm.AudioStateMachine.SoundtrackStateMachine(0, currentPitchAdjustment);
+            gm.AudioStateMachine.SoundtrackStateMachine(0, gm.AudioStateMachine.currentPitchAdjustment);
         }
         //ACTIVATE WIN CONDITION//
         else if (EnemyVessel.Health <= 0)
@@ -104,7 +103,7 @@ public class CombatEvent : Event
             IsEventConcluded = true;
             Debug.Log("Trigger WIN condition");
             GameObject.Destroy(EnemyVessel.gameObject);
-            gm.AudioStateMachine.SoundtrackStateMachine(0, currentPitchAdjustment);
+            gm.AudioStateMachine.SoundtrackStateMachine(0, gm.AudioStateMachine.currentPitchAdjustment);
         }
         else
         {

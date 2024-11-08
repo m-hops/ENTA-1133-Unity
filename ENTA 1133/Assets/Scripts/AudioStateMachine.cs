@@ -9,6 +9,8 @@ public class AudioStateMachine : MonoBehaviour
     public AudioClip MainTheme_Loop;
     public AudioClip TRUMAN_Loop;
     public AudioClip UIButton_SFX;
+    public float currentPitchAdjustment = 1f;
+    public float pitchOffset = 0.30f;
 
     public void Start()
     {
