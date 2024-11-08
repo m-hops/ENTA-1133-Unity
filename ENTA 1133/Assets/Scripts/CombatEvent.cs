@@ -27,7 +27,7 @@ public class CombatEvent : Event
     //BEHAVIOUR FOR A SINGLE ROUND OF COMBAT//
     public void CombatRoundStage2(GameManager gm, int playerVesselWeaponIndex)
     {
-       
+        gm.Player.Vessel.SetWeaponUsed(playerVesselWeaponIndex);
         //SETUP FOR COMBAT CALCULATIONS//
         int enemyVesselWeaponIndex = EnemyVessel.GetRandomAvailableWeaponIndex(gm.Dice);
         string enemyVesselCurrentWeapon = EnemyVessel.Weapons[enemyVesselWeaponIndex].Name;
@@ -91,15 +91,17 @@ public class CombatEvent : Event
             gm.CombatUIHUD.UpdateCombatText("Player was killed by the enemy.");
             gm.IsPlayerAlive = false;
             IsEventConcluded = true;
-            gm.CombatUIHUD.UpdateCombatText("Trigger LOSE condition");
+            Debug.Log("Trigger LOSE condition");
+            gm.AudioStateMachine.SoundtrackStateMachine(0);
         }
         //ACTIVATE WIN CONDITION//
         else if (EnemyVessel.Health <= 0)
         {
             gm.CombatUIHUD.UpdateCombatText("Enemy was killed by the player.");
             IsEventConcluded = true;
-            gm.CombatUIHUD.UpdateCombatText("Trigger WIN condition");
+            Debug.Log("Trigger WIN condition");
             GameObject.Destroy(EnemyVessel.gameObject);
+            gm.AudioStateMachine.SoundtrackStateMachine(0);
         }
         else
         {

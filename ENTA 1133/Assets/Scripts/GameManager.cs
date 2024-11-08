@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Player Player;
     public Map Map;
     public CombatUIHUD CombatUIHUD;
+    public AudioStateMachine AudioStateMachine;
 
     [Range (1,3)]
     public int MapWidth = 3;

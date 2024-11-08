@@ -17,6 +17,7 @@ public class CombatUIHUD : MonoBehaviour
     public TMPro.TMP_Text WeaponSlot3;
     public GameManager GM;
     public CombatEvent CurrentCombatEvent;
+    private int currentSoundtrack = 0;
 
     public void SetupCombatEventUI (CombatEvent combatEvent)
     {
@@ -31,6 +32,13 @@ public class CombatUIHUD : MonoBehaviour
         WeaponSlot1.text = GM.Player.Vessel.Weapons[1].Name.ToString();
         WeaponSlot2.text = GM.Player.Vessel.Weapons[2].Name.ToString();
         WeaponSlot3.text = GM.Player.Vessel.Weapons[3].Name.ToString();
+
+        switch (currentSoundtrack)
+        {
+            case 0:
+                GM.AudioStateMachine.SoundtrackStateMachine(1);
+                break;
+        }
     }
 
     public void UpdateEnemyName (string name)
@@ -64,15 +72,50 @@ public class CombatUIHUD : MonoBehaviour
     }
     public void ShowCombatRound(Vessel player, Vessel enemy)
     {
-        CombatTextOutput.text = "[BEGIN COMBAT]";
         UpdateEnemyName(enemy.Name);
         UpdateEnemyHealth(enemy.Health);
         UpdatePlayerName(player.Name);
         UpdatePlayerHealth(player.Health);
-        WeaponSlot0.text = player.Weapons[0].Name.ToString();
-        WeaponSlot1.text = player.Weapons[1].Name.ToString();
-        WeaponSlot2.text = player.Weapons[2].Name.ToString();
-        WeaponSlot3.text = player.Weapons[3].Name.ToString();
+
+        if (player.IsWeaponIndexReady(0))
+        {
+            WeaponSlot0.gameObject.SetActive(true);
+            WeaponSlot0.text = player.Weapons[0].Name.ToString();
+        } 
+        else
+        {
+            WeaponSlot0.gameObject.SetActive(false);
+        }
+
+        if (player.IsWeaponIndexReady(1))
+        {
+            WeaponSlot1.gameObject.SetActive(true);
+            WeaponSlot1.text = player.Weapons[1].Name.ToString();
+        }
+        else
+        {
+            WeaponSlot1.gameObject.SetActive(false);
+        }
+
+        if (player.IsWeaponIndexReady(2))
+        {
+            WeaponSlot2.gameObject.SetActive(true);
+            WeaponSlot2.text = player.Weapons[2].Name.ToString();
+        }
+        else
+        {
+            WeaponSlot2.gameObject.SetActive(false);
+        }
+
+        if (player.IsWeaponIndexReady(3))
+        {
+            WeaponSlot3.gameObject.SetActive(true);
+            WeaponSlot3.text = player.Weapons[3].Name.ToString();
+        }
+        else
+        {
+            WeaponSlot3.gameObject.SetActive(false);
+        }
     }
 
 

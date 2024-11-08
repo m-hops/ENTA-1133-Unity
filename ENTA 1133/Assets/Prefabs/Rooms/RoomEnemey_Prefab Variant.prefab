@@ -23,6 +23,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2808560493672376862, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71dc289e4e9239f409aaa03decd5f59d, type: 2}
+    - target: {fileID: 2814585522451351212, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71dc289e4e9239f409aaa03decd5f59d, type: 2}
     - target: {fileID: 2834421012381946988, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,6 +98,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomEnemey_Prefab Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5126020053239496889, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71dc289e4e9239f409aaa03decd5f59d, type: 2}
     - target: {fileID: 5323437180094337913, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_IsActive
@@ -118,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f043f38a75a1b8c41b3f5a8fc933a5b6, type: 2}
+    - target: {fileID: 7888303007071212970, guid: a25c328639dcc6d4fb42c93d23ea15c7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 71dc289e4e9239f409aaa03decd5f59d, type: 2}
     - target: {fileID: 8020856140988031461, guid: a25c328639dcc6d4fb42c93d23ea15c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

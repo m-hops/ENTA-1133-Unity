@@ -75,4 +75,12 @@ public class Vessel : MonoBehaviour
             WeaponsReady.Add(i);
         }
     }
+    public bool IsWeaponIndexReady(int weaponSlotIndex)
+    {
+        return WeaponsReady.Contains(weaponSlotIndex);
+    }
+    public void SetWeaponUsed(int weaponSlotIndex)
+    {
+        WeaponsReady.Remove(weaponSlotIndex);
+    }
 }
