@@ -94,6 +94,7 @@ public class CombatEvent : Event
             gm.IsPlayerAlive = false;
             IsEventConcluded = true;
             Debug.Log("Trigger LOSE condition");
+            Lose(gm);
             gm.AudioStateMachine.SoundtrackStateMachine(0, gm.AudioStateMachine.currentPitchAdjustment);
         }
         //ACTIVATE WIN CONDITION//
@@ -104,6 +105,11 @@ public class CombatEvent : Event
             Debug.Log("Trigger WIN condition");
             GameObject.Destroy(EnemyVessel.gameObject);
             gm.AudioStateMachine.SoundtrackStateMachine(0, gm.AudioStateMachine.currentPitchAdjustment);
+
+            if (gm.EnemyVesselsPool.Count <= 0)
+            {
+                Win(gm);
+            }
         }
         else
         {
@@ -133,10 +139,12 @@ public class CombatEvent : Event
     public void Lose(GameManager gm)
     {
         gm.IsGameRunning = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
     }
     public void Win(GameManager gm)
     {
         gm.IsGameRunning = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
     }
 
 }

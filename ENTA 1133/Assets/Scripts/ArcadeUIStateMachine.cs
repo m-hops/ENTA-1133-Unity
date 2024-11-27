@@ -11,6 +11,7 @@ public class ArcadeUIStateMachine : MonoBehaviour
     public GameObject Combat;
     public GameObject Inventory;
     public GameObject ShipSelect;
+    public GameObject GetItem;
 
     public void LoadingScreen()
     {
@@ -51,6 +52,10 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Combat.SetActive(false);
         Inventory.SetActive(false);
         ShipSelect.SetActive(true);
+    }
+    public void CloseGetItem()
+    {
+        GetItem.SetActive(false);
     }
     public void DownButtonColorChange(Image image)
     {

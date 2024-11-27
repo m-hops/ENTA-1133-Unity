@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8753116115568650021
+--- !u!114 &-3644473111772040358
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,9 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyRoom_Material 1
-  m_Shader: {fileID: -6465566751694194690, guid: 64e376c7a39b98b46a3ffa45204d75a0,
-    type: 3}
+  m_Name: TreasureRoom_Material 2
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -31,24 +30,17 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_28f8627f1f1f4bc9bf671d0aeb4f5484:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_501f966dc2894be1a05a3ed3232f9626:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 3d6064e2e1cd7214e9f67f3a68f494fb, type: 3}
-        m_Scale: {x: 0.25, y: 0.25}
-        m_Offset: {x: 0.375, y: 0.05}
+        m_Texture: {fileID: 2800000, guid: 1a1dddc99fb985340be49f1a1bb3e20d, type: 3}
+        m_Scale: {x: 1, y: 1.18}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,9 +62,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d6064e2e1cd7214e9f67f3a68f494fb, type: 3}
-        m_Scale: {x: 0.25, y: 0.25}
-        m_Offset: {x: 0.375, y: 0.05}
+        m_Texture: {fileID: 2800000, guid: 1a1dddc99fb985340be49f1a1bb3e20d, type: 3}
+        m_Scale: {x: 1, y: 1.18}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -103,11 +95,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_084a9c1df30f4c9cbd5c712cb6e9ec8d: 1
-    - Vector1_c2d85733ecbe4191ac51d2b8323b0f00: 0
-    - Vector1_c72a6893f6a349c8a000a2095dacd30d: 1
-    - Vector1_cc14860c517648d49c73167122ea3a7c: 0
-    - Vector1_eddf0aef0b6149d48fe472f9a5dfdde4: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -128,7 +115,6 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
@@ -140,10 +126,6 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_0a5961ff50d04fceaa97984a2edbed85: {r: 0.16981125, g: 0.16981125, b: 0.16981125,
-        a: 0}
-    - Vector2_96a8f458f9bf4edd8980eaa00f7c7462: {r: 1, g: 1, b: 0, a: 0}
-    - Vector2_aa876777cf0d4bb9835636a4555023c1: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
