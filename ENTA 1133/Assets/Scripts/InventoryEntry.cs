@@ -7,6 +7,6 @@ public class InventoryEntry : MonoBehaviour
 {
     public Image Image;
     public TMPro.TMP_Text Name;
-    public TMPro.TMP_Text Effect;
+    public TMPro.TMP_Text Description;
 
 }

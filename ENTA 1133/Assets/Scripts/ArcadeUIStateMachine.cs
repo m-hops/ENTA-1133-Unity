@@ -85,6 +85,15 @@ public class ArcadeUIStateMachine : MonoBehaviour
         PauseScreen.SetActive(false);
         isPauseScreenActive = false;
     }
+    public void OpenInventoryScreen()
+    {
+        Inventory.SetActive(true);
+        Inventory.GetComponent<InventoryUIHUD>().DisplayInventory();
+    }
+    public void CloseInventoryScreen()
+    {
+        Inventory.SetActive(false);
+    }
     public void LoadMainMenu()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");

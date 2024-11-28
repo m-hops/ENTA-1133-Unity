@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryUIHUD : MonoBehaviour
 {
+    public ArcadeUIStateMachine ArcadeUIStateMachine;
     public Image VesselIcon;
     public TMPro.TMP_Text VesselName;
     public TMPro.TMP_Text[] WeaponNames;
@@ -12,29 +13,41 @@ public class InventoryUIHUD : MonoBehaviour
     public TMPro.TMP_Text HP;
     public TMPro.TMP_Text ATKBonus;
     public TMPro.TMP_Text DEFBonus;
-    public GameObject[] InvEntry;
-    public GameManager GM;
+    public TMPro.TMP_Text InventoryCount;
 
-    public void Update()
+    public Image[] EntryIcon;
+    public TMPro.TMP_Text[] EntryName;
+    public TMPro.TMP_Text[] EntryDescription;
+
+    public void DisplayInventory()
     {
-        VesselIcon.sprite = GM.Player.Vessel.Sprite;
-        VesselName.text = GM.Player.Vessel.Name;
-
-        for (int i = 0; i < GM.Player.Vessel.Weapons.Length; i++)
+       
+        for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
         {
-            WeaponNames[i].text = GM.Player.Vessel.Weapons[i].Name;
-            WeaponPowers[i].text = "1-" + GM.Player.Vessel.Weapons[i].PowerLevel.ToString();
+            EntryName[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
+            EntryDescription[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
+            EntryIcon[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
         }
 
-        HP.text = GM.Player.Vessel.Health.ToString();
-        ATKBonus.text = GM.Player.AttackBonus.ToString();
-        DEFBonus.text = GM.Player.DefenseBonus.ToString();
+        VesselIcon.sprite = ArcadeUIStateMachine.GM.Player.Vessel.Sprite;
+        VesselName.text = ArcadeUIStateMachine.GM.Player.Vessel.Name;
 
-        for (int i = 0; i < GM.Player.Inventory.Items.Count; i++)
+        for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Vessel.Weapons.Length; i++)
+        {
+            WeaponNames[i].text = ArcadeUIStateMachine.GM.Player.Vessel.Weapons[i].Name;
+            WeaponPowers[i].text = "1-" + ArcadeUIStateMachine.GM.Player.Vessel.Weapons[i].PowerLevel.ToString();
+        }
+
+        HP.text = ArcadeUIStateMachine.GM.Player.Vessel.Health.ToString();
+        ATKBonus.text = ArcadeUIStateMachine.GM.Player.AttackBonus.ToString();
+        DEFBonus.text = ArcadeUIStateMachine.GM.Player.DefenseBonus.ToString();
+        InventoryCount.text = ArcadeUIStateMachine.GM.Player.Inventory.Items.Count.ToString() + "/6";
+    }
+    public void SelectConsumable(int slot)
+    {
+        switch (slot)
         {
             
         }
-
     }
-
 }
