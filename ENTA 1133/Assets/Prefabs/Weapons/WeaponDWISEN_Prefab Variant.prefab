@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: PowerLevel
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
+        type: 3}
+      propertyPath: Description
+      value: 'RANGE: 1-10'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

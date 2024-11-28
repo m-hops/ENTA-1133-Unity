@@ -6,8 +6,8 @@ public class Passive : Item
 {
     public int PowerLevel;
 
-    public Passive(string name, int powerLevel)
-        : base(ItemType.Passive, name)
+    public Passive(string name, int powerLevel, string description, Sprite sprite)
+        : base(ItemType.Passive, name, description, sprite)
     {
         PowerLevel = powerLevel;
     }

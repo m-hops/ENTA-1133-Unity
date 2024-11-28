@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Map Map;
     public CombatUIHUD CombatUIHUD;
     public AudioStateMachine AudioStateMachine;
+    public ArcadeUIStateMachine ArcadeUIStateMachine;
 
     [Range (1,3)]
     public int MapWidth = 3;
@@ -35,6 +36,21 @@ public class GameManager : MonoBehaviour
 
         Map.Setup(this, MapWidth, MapHeight, Dice, 1, 1);
 
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ArcadeUIStateMachine.isPauseScreenActive)
+            {
+                ArcadeUIStateMachine.ClosePauseScreen();
+            }
+            else
+            {
+                ArcadeUIStateMachine.OpenPauseScreen();
+            }
+        }
     }
 
 }

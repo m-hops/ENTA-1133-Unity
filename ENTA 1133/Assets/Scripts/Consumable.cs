@@ -6,8 +6,8 @@ public class Consumable : Item
 {
     public int PowerLevel;
 
-    public Consumable(string name, int powerLevel)
-        : base(ItemType.Consumable, name)
+    public Consumable(string name, int powerLevel, string description, Sprite sprite)
+        : base(ItemType.Consumable, name, description, sprite)
     {
         PowerLevel = powerLevel;
     }

@@ -12,11 +12,15 @@ public class Item : MonoBehaviour
     }
     public ItemType Type;
     public string Name;
+    public string Description;
+    public Sprite Sprite;
 
-    public Item(ItemType type, string name)
+    public Item(ItemType type, string name, string description, Sprite sprite)
     {
         Type = type;
         Name = name;
+        Description = description;
+        Sprite = sprite;
     }
     public virtual void Consume(GameManager gm)
     {
@@ -27,7 +31,7 @@ public class Item : MonoBehaviour
     public class ItemRepairHP : Item
     {
         int RollLimit;
-        public ItemRepairHP(string name, int rollLimit) : base(ItemType.Consumable, name)
+        public ItemRepairHP(string name, int rollLimit, string description, Sprite sprite) : base(ItemType.Consumable, name, description, sprite)
         {
             RollLimit = rollLimit;
         }
@@ -43,7 +47,7 @@ public class Item : MonoBehaviour
     {
         int NegateAmount;
 
-        public ItemDamageNegator(string name, int negateAmount) : base(ItemType.Passive, name)
+        public ItemDamageNegator(string name, int negateAmount, string description, Sprite sprite) : base(ItemType.Passive, name, description, sprite)
         {
             NegateAmount = negateAmount;
         }
@@ -56,7 +60,7 @@ public class Item : MonoBehaviour
     {
         int AddAmount;
 
-        public ItemDamageEnhance(string name, int addAmount) : base(ItemType.Passive, name)
+        public ItemDamageEnhance(string name, int addAmount, string description, Sprite sprite) : base(ItemType.Passive, name, description, sprite)
         {
             AddAmount = addAmount;
         }

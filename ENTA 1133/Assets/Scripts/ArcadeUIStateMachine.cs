@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class ArcadeUIStateMachine : MonoBehaviour
 {
+    public GameManager GM;
     public GameObject Loading;
     public GameObject Navigation;
     public GameObject Combat;
     public GameObject Inventory;
     public GameObject ShipSelect;
     public GameObject GetItem;
+    public GameObject GetWeapon;
+    public GameObject PauseScreen;
+    public bool isPauseScreenActive = false;
 
     public void LoadingScreen()
     {
@@ -53,9 +56,38 @@ public class ArcadeUIStateMachine : MonoBehaviour
         Inventory.SetActive(false);
         ShipSelect.SetActive(true);
     }
+
+    public void OpenGetItem(Item item)
+    {
+        GetItem.SetActive(true);
+        GetItem.GetComponent<GetItemUIHUD>().PopupInfo(item);
+    }
     public void CloseGetItem()
     {
         GetItem.SetActive(false);
+    }
+    public void OpenGetWeapon(Weapon weapon)
+    {
+        GetWeapon.SetActive(true);
+        GetWeapon.GetComponent<GetWeaponUIHUD>().PopupInfo(weapon);
+    }
+    public void CloseGetWeapon()
+    {
+        GetWeapon.SetActive(false);
+    }
+    public void OpenPauseScreen()
+    {
+        PauseScreen.SetActive(true);
+        isPauseScreenActive = true;
+    }
+    public void ClosePauseScreen()
+    {
+        PauseScreen.SetActive(false);
+        isPauseScreenActive = false;
+    }
+    public void LoadMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
     public void DownButtonColorChange(Image image)
     {

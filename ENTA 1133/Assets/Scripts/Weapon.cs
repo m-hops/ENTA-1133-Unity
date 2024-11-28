@@ -6,8 +6,8 @@ public class Weapon : Item
 {
     public int PowerLevel;
 
-    public Weapon(string name, int powerLevel)
-        :base(ItemType.Weapon, name)
+    public Weapon(string name, int powerLevel, string description, Sprite sprite)
+        :base(ItemType.Weapon, name, description, sprite)
     {
         PowerLevel = powerLevel;
     }

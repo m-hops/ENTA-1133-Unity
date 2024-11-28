@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetItemUIHUD : MonoBehaviour
 {
-    public GameManager GM;
     public TMPro.TMP_Text Description;
     public TMPro.TMP_Text ItemName;
-    public GameObject Icon;
+    public Image Icon;
 
-    public void DisplayInfo()
+    public void PopupInfo(Item item)
     {
-
+        ItemName.text = item.Name;
+        Description.text = item.Description;
+        Icon.sprite = item.Sprite;
     }
 }

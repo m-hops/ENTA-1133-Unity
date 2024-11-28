@@ -15,8 +15,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878199118616754401, guid: c4dfa71fe33bd684e9c359feef9f5dca,
         type: 3}
+      propertyPath: Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76e9d1760a96d2846b283cb85e5f74ff,
+        type: 3}
+    - target: {fileID: 1878199118616754401, guid: c4dfa71fe33bd684e9c359feef9f5dca,
+        type: 3}
       propertyPath: PowerLevel
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878199118616754401, guid: c4dfa71fe33bd684e9c359feef9f5dca,
+        type: 3}
+      propertyPath: Description
+      value: +HP 1-10
       objectReference: {fileID: 0}
     - target: {fileID: 3357239598185550109, guid: c4dfa71fe33bd684e9c359feef9f5dca,
         type: 3}
