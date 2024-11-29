@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
         type: 3}
       propertyPath: Name
-      value: PROPHECY
+      value: '[PROPHECY]'
       objectReference: {fileID: 0}
     - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
         type: 3}
@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 7899897575680755532, guid: 46b0337b38198184fa1abdd06bd94518,
         type: 3}
       propertyPath: Description
-      value: 'RANGE: 1-80'
+      value: ATK 1-80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

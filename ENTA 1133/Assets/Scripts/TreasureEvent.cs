@@ -6,7 +6,7 @@ public class TreasureEvent : Event
 {
     public override void Execute(GameManager gm)
     {
-        int roomSelection = gm.Dice.Roll(3);
+        int roomSelection = gm.Dice.Roll(4);
         List<Weapon> weaponPool = gm.TreasurePoolWeapons;
         List<Item> consumablePool = gm.TreasurePoolConsumable;
         List<Item> passivePool = gm.TreasurePoolPassive;
@@ -33,6 +33,7 @@ public class TreasureEvent : Event
                 }
                 break;
             case 3:
+            case 4:
                 {
                     int poolSize = passivePool.Count;
                     int selectedIndex = gm.Dice.Roll(poolSize) - 1;
@@ -40,6 +41,7 @@ public class TreasureEvent : Event
                     passivePool.RemoveAt(selectedIndex);
                     TreasureItem(gm, selectedItem);
                     selectedItem.Consume(gm);
+                    gm.Player.Inventory.RemoveItem(selectedItem);
                 }
                 break;
         }

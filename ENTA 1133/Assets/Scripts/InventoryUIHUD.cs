@@ -18,18 +18,22 @@ public class InventoryUIHUD : MonoBehaviour
     public Image[] EntryIcons;
     public TMPro.TMP_Text[] EntryNames;
     public TMPro.TMP_Text[] EntryDescriptions;
+    public GameObject[] EntryButtons;
+    public Sprite DefaultSprite;
 
-    //public ScrollRect ConsumableArea;
+    private float yOffset = 0;
+    private float offsetAmount = 25;
+    public RectTransform ListTransform;
 
     public void DisplayInventory()
     {
 
-        //for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
-        //{
-        //    EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
-        //    EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
-        //    EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
-        //}
+        for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
+        {
+            EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
+            EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
+            EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
+        }
 
         VesselIcon.sprite = ArcadeUIStateMachine.GM.Player.Vessel.Sprite;
         VesselName.text = ArcadeUIStateMachine.GM.Player.Vessel.Name;
@@ -46,21 +50,42 @@ public class InventoryUIHUD : MonoBehaviour
         InventoryCount.text = ArcadeUIStateMachine.GM.Player.Inventory.Items.Count.ToString() + "/6";
     }
 
-    public void SelectItem()
+    public void SelectItem(int index)
     {
-        Debug.Log("Item Selected");
+        Item selectedItem = ArcadeUIStateMachine.GM.Player.Inventory.Items[index];
+        selectedItem.Consume(ArcadeUIStateMachine.GM);
+        ArcadeUIStateMachine.GM.Player.Inventory.RemoveItem(selectedItem);
+
+        EntryNames[index].text = "--";
+        EntryDescriptions[index].text = "--";
+        EntryIcons[index].sprite = DefaultSprite;
+        HP.text = ArcadeUIStateMachine.GM.Player.Vessel.Health.ToString();
+
     }
 
     public void ScrollUp()
     {
-        Debug.Log("Scroll Up");
-        //ConsumableArea.normalizedPosition = new Vector2(0f, 0.5f);
+        if (yOffset < 175)
+        {
+            yOffset += offsetAmount;
+            UpdateListOffset();
+        }
+
     }
 
     public void ScrollDown()
     {
-        Debug.Log("Scroll Down");
-        //ConsumableArea.verticalNormalizedPosition -= 0.2f;
+        if (yOffset > 0)
+        {
+            yOffset -= offsetAmount;
+            UpdateListOffset();
+        }
+        
+    }
+
+    private void UpdateListOffset()
+    {
+        ListTransform.localPosition = new Vector3(0, yOffset, 0);
     }
 }
 
