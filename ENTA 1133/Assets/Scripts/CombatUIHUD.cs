@@ -19,6 +19,10 @@ public class CombatUIHUD : MonoBehaviour
     public CombatEvent CurrentCombatEvent;
     private int currentSoundtrack = 0;
 
+    public void Update()
+    {
+        UpdatePlayerHealth(ArcadeUIStateMachine.GM.Player.Vessel.Health);
+    }
     public void SetupCombatEventUI (CombatEvent combatEvent)
     {
         CurrentCombatEvent = combatEvent;
