@@ -18,6 +18,8 @@ public class CombatUIHUD : MonoBehaviour
     public GameManager GM;
     public CombatEvent CurrentCombatEvent;
     private int currentSoundtrack = 0;
+    private int battleDialogCount = 0;
+    private int battleDialogLimit = 5;
 
     public void Update()
     {
@@ -78,6 +80,14 @@ public class CombatUIHUD : MonoBehaviour
     }
     public void UpdateCombatText(string txt)
     {
+        if (battleDialogCount > battleDialogLimit)
+        {
+            battleDialogCount = 0;
+            ClearCombatText();
+            CombatTextOutput.text = "[BEGIN COMBAT]";
+        }
+        battleDialogCount++;
+
         CombatTextOutput.text = CombatTextOutput.text + "\n\n" + txt;
     }
     public void ClearCombatText()
