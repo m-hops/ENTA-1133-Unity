@@ -19,17 +19,17 @@ public class InventoryUIHUD : MonoBehaviour
     public TMPro.TMP_Text[] EntryNames;
     public TMPro.TMP_Text[] EntryDescriptions;
 
-    public ScrollRect ConsumableArea;
+    //public ScrollRect ConsumableArea;
 
     public void DisplayInventory()
     {
 
-        for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
-        {
-            EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
-            EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
-            EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
-        }
+        //for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
+        //{
+        //    EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
+        //    EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
+        //    EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
+        //}
 
         VesselIcon.sprite = ArcadeUIStateMachine.GM.Player.Vessel.Sprite;
         VesselName.text = ArcadeUIStateMachine.GM.Player.Vessel.Name;
@@ -54,13 +54,13 @@ public class InventoryUIHUD : MonoBehaviour
     public void ScrollUp()
     {
         Debug.Log("Scroll Up");
-        ConsumableArea.normalizedPosition = new Vector2(0f, 0.5f);
+        //ConsumableArea.normalizedPosition = new Vector2(0f, 0.5f);
     }
 
     public void ScrollDown()
     {
         Debug.Log("Scroll Down");
-        ConsumableArea.verticalNormalizedPosition -= 0.2f;
+        //ConsumableArea.verticalNormalizedPosition -= 0.2f;
     }
 }
 
