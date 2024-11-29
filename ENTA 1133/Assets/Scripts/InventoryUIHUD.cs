@@ -15,18 +15,20 @@ public class InventoryUIHUD : MonoBehaviour
     public TMPro.TMP_Text DEFBonus;
     public TMPro.TMP_Text InventoryCount;
 
-    public Image[] EntryIcon;
-    public TMPro.TMP_Text[] EntryName;
-    public TMPro.TMP_Text[] EntryDescription;
+    public Image[] EntryIcons;
+    public TMPro.TMP_Text[] EntryNames;
+    public TMPro.TMP_Text[] EntryDescriptions;
+
+    public ScrollRect ConsumableArea;
 
     public void DisplayInventory()
     {
-       
+
         for (int i = 0; i < ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i++)
         {
-            EntryName[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
-            EntryDescription[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
-            EntryIcon[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
+            EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
+            EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
+            EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
         }
 
         VesselIcon.sprite = ArcadeUIStateMachine.GM.Player.Vessel.Sprite;
@@ -43,11 +45,22 @@ public class InventoryUIHUD : MonoBehaviour
         DEFBonus.text = ArcadeUIStateMachine.GM.Player.DefenseBonus.ToString();
         InventoryCount.text = ArcadeUIStateMachine.GM.Player.Inventory.Items.Count.ToString() + "/6";
     }
-    public void SelectConsumable(int slot)
+
+    public void SelectItem()
     {
-        switch (slot)
-        {
-            
-        }
+        Debug.Log("Item Selected");
+    }
+
+    public void ScrollUp()
+    {
+        Debug.Log("Scroll Up");
+        ConsumableArea.normalizedPosition = new Vector2(0f, 0.5f);
+    }
+
+    public void ScrollDown()
+    {
+        Debug.Log("Scroll Down");
+        ConsumableArea.verticalNormalizedPosition -= 0.2f;
     }
 }
+

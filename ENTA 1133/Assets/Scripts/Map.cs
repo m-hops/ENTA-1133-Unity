@@ -15,6 +15,7 @@ public class Map : MonoBehaviour
     {
         Rooms = new Room[width, height];
         Rooms[startX, startY] = GameObject.Instantiate(StartRoom);
+        Rooms[startX, startY].Event = new TreasureEvent();
         List<Room> roomInstances = new List<Room>();
         
         for (int x = 0; x < EnemyCount; x++)
