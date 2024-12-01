@@ -18197,9 +18197,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: AudioStateMachine, Assembly-CSharp
-          m_MethodName: SFX_UIButton
+        - m_Target: {fileID: 2535541016591336253}
+          m_TargetAssemblyTypeName: ArcadeUIStateMachine, Assembly-CSharp
+          m_MethodName: CloseGetWeapon
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

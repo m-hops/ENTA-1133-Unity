@@ -19,7 +19,7 @@ public class CombatUIHUD : MonoBehaviour
     public CombatEvent CurrentCombatEvent;
     private int currentSoundtrack = 0;
     private int battleDialogCount = 0;
-    private int battleDialogLimit = 5;
+    private int battleDialogLimit = 4;
 
     public void Update()
     {

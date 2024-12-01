@@ -280,7 +280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &528208721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2042,21 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 602379437}
+    - target: {fileID: 9084479990872170210, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseGetWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084479990872170210, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SFX_UIButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084479990872170210, guid: 992089bce2fa4ef47a82ab5e456e3452,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioStateMachine, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 9104434892951914227, guid: 992089bce2fa4ef47a82ab5e456e3452,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target

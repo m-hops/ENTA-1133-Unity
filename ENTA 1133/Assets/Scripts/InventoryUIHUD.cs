@@ -24,7 +24,7 @@ public class InventoryUIHUD : MonoBehaviour
     private float yOffset = 0;
     private float offsetAmount = 25;
     public RectTransform ListTransform;
-
+    
     public void DisplayInventory()
     {
 
@@ -33,6 +33,12 @@ public class InventoryUIHUD : MonoBehaviour
             EntryNames[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Name;
             EntryDescriptions[i].text = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Description;
             EntryIcons[i].sprite = ArcadeUIStateMachine.GM.Player.Inventory.Items[i].Sprite;
+        }
+        for (int i = ArcadeUIStateMachine.GM.Player.Inventory.Items.Count; i < 6 ; i++)
+        {
+            EntryNames[i].text = "--";
+            EntryDescriptions[i].text = "--";
+            EntryIcons[i].sprite = DefaultSprite;
         }
 
         VesselIcon.sprite = ArcadeUIStateMachine.GM.Player.Vessel.Sprite;
@@ -55,11 +61,7 @@ public class InventoryUIHUD : MonoBehaviour
         Item selectedItem = ArcadeUIStateMachine.GM.Player.Inventory.Items[index];
         selectedItem.Consume(ArcadeUIStateMachine.GM);
         ArcadeUIStateMachine.GM.Player.Inventory.RemoveItem(selectedItem);
-
-        EntryNames[index].text = "--";
-        EntryDescriptions[index].text = "--";
-        EntryIcons[index].sprite = DefaultSprite;
-        HP.text = ArcadeUIStateMachine.GM.Player.Vessel.Health.ToString();
+        DisplayInventory();
 
     }
 
